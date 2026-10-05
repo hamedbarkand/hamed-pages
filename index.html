@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>حامد برکند</title>
 
   <style>
@@ -62,6 +63,14 @@
       word-break: break-word;
     }
 
+    /* تنظیم یکدست متن آدرس */
+    .address {
+      direction: rtl;
+      text-align: right;
+      unicode-bidi: plaintext;
+      line-height: 2;
+    }
+
     a {
       color: inherit;
       text-decoration: none;
@@ -69,6 +78,8 @@
 
     .phone {
       color: #ffffff;
+      direction: ltr;
+      display: inline-block;
     }
 
     .copy-row {
@@ -136,6 +147,7 @@
 
   <div class="container">
 
+    <!-- عنوان -->
     <div class="header">
       <h1>حامد برکند</h1>
       <p>اطلاعات تماس و پرداخت</p>
@@ -156,10 +168,10 @@
     <div class="card">
       <div class="title">📍 آدرس</div>
 
-      <div class="value">
+      <div class="value address">
         خیابان داریوش (توحید)<br>
         رو به روی کوچه ۲<br>
-        نبش پاساژ وحدت موبایل ماهان افسری
+        نبش پاساژ وحدت، موبایل ماهان افسری
       </div>
     </div>
 
@@ -180,7 +192,7 @@
       <div id="cardMessage" class="message"></div>
     </div>
 
-    <!-- شبا -->
+    <!-- شماره شبا -->
     <div class="card">
       <div class="title">🏦 شماره شبا</div>
 
@@ -214,6 +226,7 @@
       </a>
     </div>
 
+    <!-- پایین صفحه -->
     <div class="footer">
       حامد برکند
     </div>
@@ -223,11 +236,13 @@
   <script>
     function copyText(text, messageId) {
       navigator.clipboard.writeText(text).then(function() {
+
         document.getElementById(messageId).innerText = "کپی شد ✓";
 
         setTimeout(function() {
           document.getElementById(messageId).innerText = "";
         }, 2000);
+
       });
     }
   </script>
