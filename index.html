@@ -1,1 +1,236 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>حامد برکند</title>
 
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: #0b0b0d;
+      color: #ffffff;
+      min-height: 100vh;
+      padding: 25px 16px;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: auto;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 30px;
+      font-weight: 800;
+    }
+
+    .header p {
+      color: #999;
+      margin-top: 8px;
+      font-size: 14px;
+    }
+
+    .card {
+      background: #151518;
+      border: 1px solid #26262b;
+      border-radius: 18px;
+      padding: 18px;
+      margin-bottom: 14px;
+    }
+
+    .title {
+      color: #aaa;
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+
+    .value {
+      font-size: 17px;
+      font-weight: 600;
+      line-height: 1.8;
+      word-break: break-word;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .phone {
+      color: #ffffff;
+    }
+
+    .copy-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .copy-row .value {
+      flex: 1;
+      direction: ltr;
+      text-align: left;
+      font-size: 16px;
+    }
+
+    button {
+      border: none;
+      background: #ffffff;
+      color: #000000;
+      padding: 9px 13px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .instagram {
+      text-align: center;
+    }
+
+    .instagram-id {
+      font-size: 20px;
+      font-weight: 700;
+      direction: ltr;
+      margin: 8px 0 15px;
+    }
+
+    .instagram-btn {
+      display: inline-block;
+      background: #ffffff;
+      color: #000000;
+      padding: 12px 20px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .message {
+      color: #62d68b;
+      font-size: 12px;
+      margin-top: 8px;
+      min-height: 18px;
+    }
+
+    .footer {
+      text-align: center;
+      color: #666;
+      font-size: 12px;
+      margin-top: 25px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="header">
+      <h1>حامد برکند</h1>
+      <p>اطلاعات تماس و پرداخت</p>
+    </div>
+
+    <!-- شماره تماس -->
+    <div class="card">
+      <div class="title">📞 شماره تماس</div>
+
+      <div class="value">
+        <a class="phone" href="tel:09172581039">
+          09172581039
+        </a>
+      </div>
+    </div>
+
+    <!-- آدرس -->
+    <div class="card">
+      <div class="title">📍 آدرس</div>
+
+      <div class="value">
+        خیابان داریوش (توحید)<br>
+        رو به روی کوچه ۲<br>
+        نبش پاساژ وحدت
+      </div>
+    </div>
+
+    <!-- شماره کارت -->
+    <div class="card">
+      <div class="title">💳 شماره کارت</div>
+
+      <div class="copy-row">
+        <div class="value">
+          6104 3312 1521 1005
+        </div>
+
+        <button onclick="copyText('6104331215211005', 'cardMessage')">
+          کپی
+        </button>
+      </div>
+
+      <div id="cardMessage" class="message"></div>
+    </div>
+
+    <!-- شبا -->
+    <div class="card">
+      <div class="title">🏦 شماره شبا</div>
+
+      <div class="copy-row">
+        <div class="value">
+          800120020000001228694913
+        </div>
+
+        <button onclick="copyText('800120020000001228694913', 'shebaMessage')">
+          کپی
+        </button>
+      </div>
+
+      <div id="shebaMessage" class="message"></div>
+    </div>
+
+    <!-- اینستاگرام -->
+    <div class="card instagram">
+      <div class="title">📸 اینستاگرام</div>
+
+      <div class="instagram-id">
+        @ha_m_ed9
+      </div>
+
+      <a
+        class="instagram-btn"
+        href="https://www.instagram.com/ha_m_ed9/"
+        target="_blank"
+      >
+        مشاهده پیج اینستاگرام
+      </a>
+    </div>
+
+    <div class="footer">
+      حامد برکند
+    </div>
+
+  </div>
+
+  <script>
+    function copyText(text, messageId) {
+      navigator.clipboard.writeText(text).then(function() {
+        document.getElementById(messageId).innerText = "کپی شد ✓";
+
+        setTimeout(function() {
+          document.getElementById(messageId).innerText = "";
+        }, 2000);
+      });
+    }
+  </script>
+
+</body>
+</html>
